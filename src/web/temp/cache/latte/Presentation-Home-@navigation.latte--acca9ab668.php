@@ -25,10 +25,10 @@ final class Template_acca9ab668 extends Latte\Runtime\Template
       Skeleton Web
     </a>
     <div class="space-x-8 text-indigo-300 font-medium text-lg hidden md:flex">
-      <a href="#" class="hover:text-indigo-400 transition">Home</a>
-      <a href="#about" class="hover:text-indigo-400 transition">About</a>
+      <a href="#" class="hover:text-indigo-400 transition">Domů</a>
+      <a href="#about" class="hover:text-indigo-400 transition">O nás</a>
       <a href="#features" class="hover:text-indigo-400 transition">Features</a>
-      <a href="#getstarted" class="hover:text-indigo-400 transition">Get Started</a>
+      <a href="#getstarted" class="hover:text-indigo-400 transition">Začít</a>
     </div>
     <!-- Hamburger pro mobil -->
     <button id="mobile-menu-btn" aria-label="Otevřít menu" class="md:hidden focus:outline-none">
