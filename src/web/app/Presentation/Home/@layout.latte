@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{block title}Skeleton pro tvorbu webových stránek{/block}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes gradientBG {
+      0%, 100% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+    .animated-bg {
+      background: linear-gradient(270deg, #4f46e5, #3b82f6, #06b6d4, #4f46e5);
+      background-size: 600% 600%;
+      animation: gradientBG 12s ease infinite;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white font-sans">
+
+  {include @navigation.latte}
+
+  <main class="flex-grow px-6 max-w-7xl mx-auto">
+    {block content}{/block}
+  </main>
+
+  {include @footer.latte}
+
+</body>
+</html>

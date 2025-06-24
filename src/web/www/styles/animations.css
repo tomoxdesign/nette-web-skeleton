@@ -1,0 +1,151 @@
+/* ----------------
+   Animace gradientního tlačítka a plovoucí obrázek
+---------------- */
+.btn-animated-gradient {
+    font-family: 'Bebas Neue', cursive, sans-serif;
+    background: linear-gradient(270deg, #0C534A, #23AB4A, #0C534A);
+    background-size: 600% 600%;
+    animation: gradientMove 5s ease infinite;
+    color: white;
+    transition: background-color 0.3s ease, filter 0.3s ease;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.btn-animated-gradient:hover {
+    animation-play-state: paused;
+    background: #07402e;
+    filter: brightness(1.1);
+}
+
+.floating-image {
+    animation: floatUpDown 3s ease-in-out infinite;
+}
+
+@keyframes floatUpDown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+
+
+/* ----------------
+   Defaultní třídy skrytí pro animace při zobrazení
+---------------- */
+.animation-element {
+    opacity: 0; /* Skrytí prvků, inicializace animace */
+}
+
+/* ----------------
+   Třídy animací při zobrazení (přidání třídy in-view spustí animaci)
+---------------- */
+.fade-in.in-view { animation: fadeIn 1s ease-in-out forwards; }
+.fade-in-up.in-view { animation: fadeInUp 1s ease-in-out forwards; }
+.fade-in-down.in-view { animation: fadeInDown 1s ease-in-out forwards; }
+.fade-in-left.in-view { animation: fadeInLeft 1s ease-in-out forwards; }
+.fade-in-right.in-view { animation: fadeInRight 1s ease-in-out forwards; }
+.scale-in.in-view { animation: scaleIn 1s ease-in-out forwards; }
+.rotate-in.in-view { animation: rotateIn 1s ease-in-out forwards; }
+.rotate-out.in-view { animation: rotateOut 1s ease-in-out forwards; }
+.slide-up.in-view { animation: slideUp 1s ease-in-out forwards; }
+.slide-down.in-view { animation: slideDown 1s ease-in-out forwards; }
+.slide-left.in-view { animation: slideLeft 1s ease-in-out forwards; }
+.slide-right.in-view { animation: slideRight 1s ease-in-out forwards; }
+
+/* ----------------
+   Definice animací
+---------------- */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeInUp { from { transform: translateY(200px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes fadeInDown { from { transform: translateY(-200px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes fadeInLeft { from { transform: translateX(-200px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+@keyframes fadeInRight { from { transform: translateX(200px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+@keyframes scaleIn { from { transform: scale(1.2); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@keyframes rotateIn { from { transform: rotate(-180deg); opacity: 0; } to { transform: rotate(0deg); opacity: 1; } }
+@keyframes rotateOut { from { transform: rotate(0deg); opacity: 1; } to { transform: rotate(180deg); opacity: 0; } }
+@keyframes slideUp { from { transform: translateY(200px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes slideDown { from { transform: translateY(-200px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes slideLeft { from { transform: translateX(200px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+@keyframes slideRight { from { transform: translateX(-200px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+
+/* ----------------
+   Animace změny barvy textu
+---------------- */
+@keyframes color-change {
+    0%   { color: #FF8300; }
+    20%  { color: #FFA009; }
+    40%  { color: #FFBB11; }
+    60%  { color: #FFD318; }
+    80%  { color: #FFEB1F; }
+    100% { color: #FAFF1F; }
+}
+
+.text-color-animation {
+    animation: color-change 6s ease-in-out infinite alternate;
+}
+
+/* ----------------
+   Pulsování - lehké zvětšení a zmenšení
+---------------- */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+}
+
+.pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* ----------------
+   Otáčení na místě - plynulý rotující efekt
+---------------- */
+@keyframes rotate360 {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.rotate-360 {
+    animation: rotate360 4s linear infinite;
+}
+
+/* ----------------
+   Poskakování nahoru a dolů
+---------------- */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.bounce {
+    animation: bounce 1.5s ease-in-out infinite;
+}
+
+/* ----------------
+   Vlnění pozadí - plynulá změna barvy pozadí
+---------------- */
+@keyframes background-wave {
+    0%   { background-color: #0C534A; }
+    50%  { background-color: #23AB4A; }
+    100% { background-color: #0C534A; }
+}
+
+.bg-wave {
+    animation: background-wave 6s ease-in-out infinite;
+}
+
+/* ----------------
+   Problikávání opacity (bliká)
+---------------- */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.blink {
+    animation: blink 1s steps(2, start) infinite;
+}
+
